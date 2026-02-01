@@ -1,0 +1,18 @@
+/* src/index.css */
+:root {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  min-width: 100vw;
+  min-height: 100vh;
+  background-color: #f8fafc; /* Warna background luar */
+}
+
+#root {
+  width: 100%;
+}

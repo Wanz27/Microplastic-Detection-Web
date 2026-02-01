@@ -1,0 +1,16 @@
+# Python cache
+__pycache__/
+*.pyc
+
+# Virtual environment
+venv/
+.env/
+
+# OS junk
+.DS_Store
+
+# Logs
+*.log
+
+# Model & experiment cache (opsional, lihat catatan)
+runs/
