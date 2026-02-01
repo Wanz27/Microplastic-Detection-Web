@@ -27,7 +27,7 @@ npm run dev
 ```
 ### Mac
 ```bash
-cd repo
-npm install
+cd display-web
+npm i
 npm run dev
 ```
