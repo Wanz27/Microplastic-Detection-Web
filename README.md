@@ -1,3 +1,5 @@
+# MICROPLASTIC DETECTOR WEB
+
 ## Setup Backend (FastAPI + ML)
 
 ### Windows
