@@ -251,3 +251,37 @@ main .recent-activities a {
     gap: 1rem;
     margin-bottom: 1rem;
 }
+
+/*----------Media Queries----------*/
+@media screen and (max-width: 1200px) {
+  .container {
+    grid-template-columns: auto 23rem;
+  }
+
+  main .insights {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  main .recent-activities {
+    width: 94%;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 2rem 0 0 8.8rem;
+  }
+
+  main .recent-activities table {
+    width: 83vw;
+  }
+
+  main table thead tr th:last-child, 
+  main table thead tr th:first-child {
+    display: none;
+  }
+
+  main table tbody tr td:last-child, 
+  main table tbody tr td:first-child {
+    display: none;
+  }
+}
