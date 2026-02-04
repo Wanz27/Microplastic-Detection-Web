@@ -57,7 +57,7 @@ export default function Dashboard() {
                     <AssignmentIcon className='icon'/>
                     <div className="middle">
                         <div className="left">
-                            <h3>Total Report Creates</h3>
+                            <h3>Total Reports</h3>
                             <h1>20</h1>
                         </div>
                         <div className="progress">

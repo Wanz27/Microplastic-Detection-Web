@@ -1,6 +1,7 @@
 import MenuIcon from '@mui/icons-material/Menu';
 import LightModeIcon from '@mui/icons-material/LightMode';
 import DarkModeIcon from '@mui/icons-material/DarkMode';
+import './R-Dashboard.css'
 
 const R_Dashboard = () =>{
     return (
@@ -10,7 +11,7 @@ const R_Dashboard = () =>{
                     <MenuIcon className='icon'/>
                 </button>
                 <div className="theme-toggler">
-                    <LightModeIcon className='icon' />
+                    <LightModeIcon className='icon active' />
                     <DarkModeIcon className='icon' />
                 </div>
                 <div className="profile">
