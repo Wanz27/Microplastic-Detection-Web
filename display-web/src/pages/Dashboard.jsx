@@ -8,6 +8,10 @@ import './Dashboard.css';
 
 export default function Dashboard() {
 
+    const openSidebar = () => {
+    document.querySelector("aside")?.classList.add("active");
+    };
+
     return (
         <div className='dashboard-layout'>
             <main>
@@ -132,7 +136,7 @@ export default function Dashboard() {
             </main>
             <div className="right">
                 <div className="top">
-                    <button id='menu-btn'>
+                    <button id='menu-btn' onClick={openSidebar}>
                         <MenuIcon className='icon'/>
                     </button>
                     <div className="theme-toggler">

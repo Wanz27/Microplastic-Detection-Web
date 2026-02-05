@@ -11,6 +11,11 @@ import LogoutIcon from '@mui/icons-material/Logout';
 import './navbar.css';
 
 const Navbar = () =>{
+
+    const closeSidebar = () => {
+    document.querySelector("aside")?.classList.remove("active");
+    };
+
     return (
         <aside>
             <div className="top">
@@ -18,7 +23,7 @@ const Navbar = () =>{
                     <img src="/microscope.png"/>
                     <h2>MICROPLASTIC</h2>
                 </div>
-                <div className="close" id="close-btn">
+                <div className="close" id="close-btn" onClick={closeSidebar}>
                     <CloseIcon className='icon'/>
                 </div>
             </div>
