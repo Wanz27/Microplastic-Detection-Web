@@ -26,6 +26,7 @@
 
 aside {
     height: 100vh;
+    display: block;
 }
 
 aside .top {
@@ -46,7 +47,7 @@ aside .logo img {
 }
 
 aside .close {
-    display: none;
+    display:none;
 }
 
 aside .sidebar {
@@ -107,4 +108,26 @@ aside .sidebar a:hover {
 
 aside .sidebar a:hover .icon {
     margin-left: 1rem;
+}
+
+/*----------Media Queries Small Displays----------*/
+@media screen and (max-width: 768px) {
+    aside {
+        position: fixed;
+        left: -100%;
+        width: 18rem;
+        height: 100vh;
+        z-index: 1000;
+        background: var(--color-white);
+    }
+
+    aside.active {
+        left: 0;
+    }
+
+    aside .close {
+        display: inline-block;
+        cursor: pointer;
+        font-size: 2rem;
+    }
 }
