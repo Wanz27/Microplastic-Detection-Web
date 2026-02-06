@@ -3,7 +3,7 @@
 ## Setup Backend (FastAPI + ML)
 
 ### Windows
-```bash
+```bashx
 cd machine-learning-be
 python -m venv venv
 venv\Scripts\activate
@@ -35,3 +35,5 @@ cd display-web
 npm i
 npm run dev
 ```
+
+versi 1.5
