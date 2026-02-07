@@ -36,4 +36,5 @@ npm i
 npm run dev
 ```
 
-versi 1.5
+versi 1.6
+Add some improvement on web layout
