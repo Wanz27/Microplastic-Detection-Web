@@ -6,11 +6,7 @@ import LightModeIcon from '@mui/icons-material/LightMode';
 import DarkModeIcon from '@mui/icons-material/DarkMode';
 import './Dashboard.css';
 
-export default function Dashboard() {
-
-    const openSidebar = () => {
-    document.querySelector("aside")?.classList.add("active");
-    };
+export default function Dashboard({ onMenuClick }) {
 
     return (
         <div className='dashboard-layout'>
@@ -136,7 +132,7 @@ export default function Dashboard() {
             </main>
             <div className="right">
                 <div className="top">
-                    <button id='menu-btn' onClick={openSidebar}>
+                    <button id='menu-btn' onClick={onMenuClick}>
                         <MenuIcon className='icon'/>
                     </button>
                     <div className="theme-toggler">

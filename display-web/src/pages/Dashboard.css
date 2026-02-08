@@ -254,37 +254,40 @@ main .recent-activities a {
 
 /*----------Media Queries Medium Displays----------*/
 @media screen and (max-width: 1200px) {
-  .container {
-    grid-template-columns: auto 23rem;
+  .dashboard-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .right {
+    grid-row: 2;
   }
 
   main .insights {
-    grid-template-columns: 1fr;
-    gap: 0;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
   }
 
   main .recent-activities {
-    width: 94%;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    margin: 2rem 0 0 8.8rem;
+    position: relative; /* ⬅️ PENTING */
+    margin-top: 2rem;
+    width: 100%;
   }
 
   main .recent-activities table {
-    width: 83vw;
+    width: 100%;
   }
 
-  main table thead tr th:last-child, 
+  main table thead tr th:last-child,
   main table thead tr th:first-child {
     display: none;
   }
 
-  main table tbody tr td:last-child, 
+  main table tbody tr td:last-child,
   main table tbody tr td:first-child {
     display: none;
   }
 }
+
 
 /*----------Media Queries Small Displays----------*/
 @media screen and (max-width: 768px) {
@@ -325,7 +328,7 @@ main .recent-activities a {
         background: var(--color-white);
         width: 100%;
         margin: 0;
-        z-index: 2;
+        z-index: 100;
         box-shadow: 0 1rem 1rem var(--color-light);
     }
 

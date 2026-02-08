@@ -41,7 +41,7 @@ html {
 }
 
 body {
-  width: 10vw;
+  width: 100%;
   height: 100vh;
   font-family: poppins, sans-serif;
   font-size: 0.88rem;
@@ -51,13 +51,15 @@ body {
   color: var(--color-dark);
 }
 
-.app-layout {
+.web-layout {
   display: grid;
-  width: 96%;
-  margin: 0 auto;
+  width: 100%;
+  padding: 1rem;
   gap: 1.8rem;
-  grid-template-columns: 14rem auto;
+  grid-template-columns: 14rem 1fr;
+  min-height: 100vh;
 }
+
 
 a {
   color: var(--color-dark);
@@ -130,9 +132,9 @@ b {
 
 /*----------Media Queries Medium Displays----------*/
 @media screen and (max-width: 1200px) {
-  .container {
-    width: 94%;
-    grid-template-columns: 7rem auto;
+  .web-layout {
+    width: 100%;
+    grid-template-columns: 1fr;
   }
 
   aside .logo h2 {
@@ -155,21 +157,10 @@ b {
 
 /*----------Media Queries Small Displays----------*/
 @media screen and (max-width: 768px) {
-  .container {
+  .web-layout {
     width: 100%;
+    margin-left: 0;
     grid-template-columns: 1fr;
-  }
-  
-  aside {
-    position: fixed;
-    left: 0;
-    background: var(--color-white);
-    width: 18rem;
-    z-index: 3;
-    box-shadow: 1rem 3rem 4rem var(--color-light);
-    height: 100vh;
-    padding-right: var(--card-padding);
-    display: none;
   }
 
   aside .logo {
@@ -194,8 +185,4 @@ b {
     bottom: 5rem;
   }
 
-  aside .close {
-    display: inline-block;
-    cursor: pointer;
-  }
 }
