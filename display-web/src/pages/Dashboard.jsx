@@ -10,9 +10,29 @@ export default function Dashboard({ onMenuClick }) {
 
     return (
         <div className='dashboard-layout'>
-            <main>
+            <div className="dashboard-header">
                 <h1>Dashboard</h1>
+                <div className="header-right">
+                    <button id='menu-btn' onClick={onMenuClick}>
+                        <MenuIcon className='icon'/>
+                    </button>
 
+                    <div className="theme-toggler">
+                        <LightModeIcon className='icon active' />
+                        <DarkModeIcon className='icon' />
+                    </div>
+                    <div className="profile">
+                        <div className="info">
+                            <p>Halo, <b>Wanz</b></p>
+                            <small className='text-muted'>Admin</small>
+                        </div>
+                        <div className="profile-photo">
+                            <img src="./microscope.png"/>
+                        </div>
+                    </div>   
+                </div>  
+            </div>
+            <main>
                 <div className="date">
                     <input type="date" />
                 </div>
@@ -131,24 +151,6 @@ export default function Dashboard({ onMenuClick }) {
                 </div>
             </main>
             <div className="right">
-                <div className="top">
-                    <button id='menu-btn' onClick={onMenuClick}>
-                        <MenuIcon className='icon'/>
-                    </button>
-                    <div className="theme-toggler">
-                        <LightModeIcon className='icon active' />
-                        <DarkModeIcon className='icon' />
-                    </div>
-                    <div className="profile">
-                        <div className="info">
-                            <p>Halo, <b>Wanz</b></p>
-                            <small className='text-muted'>Admin</small>
-                        </div>
-                        <div className="profile-photo">
-                            <img src="./microscope.png"/>
-                        </div>
-                    </div>
-                </div>
                 <div className="recent-updates">
                     <h2>Recent Updates</h2>
                     <div className="updates">

@@ -52,9 +52,8 @@ body {
 }
 
 .web-layout {
-  display: grid;
+  display: flex;
   width: 100%;
-  padding: 1rem;
   gap: 1.8rem;
   grid-template-columns: 14rem 1fr;
   min-height: 100vh;
@@ -134,7 +133,8 @@ b {
 @media screen and (max-width: 1200px) {
   .web-layout {
     width: 100%;
-    grid-template-columns: 1fr;
+    grid-template-columns: 6rem 1fr;
+    padding: 0.8rem;
   }
 
   aside .logo h2 {

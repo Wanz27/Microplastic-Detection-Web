@@ -30,6 +30,7 @@ aside {
     display: block;
     position: relative;
     transition: transform 0.35s ease-in-out;
+    flex-shrink: 0;
 }
 
 aside .top {
@@ -118,7 +119,7 @@ aside .sidebar a:hover .icon {
 @media screen and (max-width: 1200px) {
     aside {
         position: relative;
-        background: yellow;
+        width: 6rem;
     }
 }
 
