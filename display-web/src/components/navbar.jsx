@@ -10,20 +10,15 @@ import SettingsIcon from '@mui/icons-material/Settings';
 import LogoutIcon from '@mui/icons-material/Logout';
 import './navbar.css';
 
-const Navbar = () =>{
-
-    const closeSidebar = () => {
-    document.querySelector("aside")?.classList.remove("active");
-    };
-
+const Navbar = ({ isOpen, onClose }) =>{
     return (
-        <aside>
+        <aside className={isOpen ? "active" : ""}>
             <div className="top">
                 <div className="logo">
                     <img src="/microscope.png"/>
                     <h2>MICROPLASTIC</h2>
                 </div>
-                <div className="close" id="close-btn" onClick={closeSidebar}>
+                <div className="close" id="close-btn" onClick={onClose}>
                     <CloseIcon className='icon'/>
                 </div>
             </div>

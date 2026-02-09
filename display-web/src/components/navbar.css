@@ -26,7 +26,11 @@
 
 aside {
     height: 100vh;
+    width: 14rem;
     display: block;
+    position: relative;
+    transition: transform 0.35s ease-in-out;
+    flex-shrink: 0;
 }
 
 aside .top {
@@ -38,6 +42,7 @@ aside .top {
 
 aside .logo {
     display: flex;
+    align-items: center;
     gap: 0.8rem;
 }
 
@@ -53,7 +58,7 @@ aside .close {
 aside .sidebar {
     display: flex;
     flex-direction: column;
-    height: 86vh;
+    height: calc(100vh - 5rem);
     position: relative;
     top: 3rem;
 }
@@ -110,19 +115,30 @@ aside .sidebar a:hover .icon {
     margin-left: 1rem;
 }
 
+/*----------Media Queries Medium Displays----------*/
+@media screen and (max-width: 1200px) {
+    aside {
+        position: relative;
+        width: 6rem;
+    }
+}
+
 /*----------Media Queries Small Displays----------*/
 @media screen and (max-width: 768px) {
     aside {
         position: fixed;
-        left: -100%;
+        left: 0;
         width: 18rem;
         height: 100vh;
-        z-index: 1000;
+        z-index: 5000;
+        padding-right: var(--card-padding);
+        transform: translateX(-100%);
+        transition: transform 0.35s ease-in-out;
         background: var(--color-white);
     }
 
     aside.active {
-        left: 0;
+        transform: translateX(0);
     }
 
     aside .close {

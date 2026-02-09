@@ -26,11 +26,15 @@
 .dashboard-layout {
     display: grid;
     grid-template-columns: auto 23rem;
+    grid-template-rows: auto 1fr;
     gap: 1.8rem;
 }
 
 main {
-    margin-top: 1.4rem;
+    margin-top: 0;
+    flex: 1;
+    width: 100%;
+    overflow-x: hidden;
 }
 
 main .date {
@@ -178,21 +182,34 @@ main .recent-activities a {
 }
 
 .right {
-    margin-top: 1.4rem;
+    margin-top: 0;
 }
 
-.right .top {
+.dashboard-header {
     display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+    box-sizing: border-box;
+    margin-bottom: 1.5rem;
+    padding: 1rem 2rem;
+    height: 4.5rem;
+    grid-column: 1 / -1;
+    
+}
+
+.dashboard-header .header-right {
+    display: flex;
+    align-items: center;
     justify-content: end;
     gap: 2rem;
-    background: var(--color-background);
 }
 
-.right .top button {
+.dashboard-header .header-right button {
     display: none;
 }
 
-.right .theme-toggler {
+.dashboard-header .header-right .theme-toggler {
     background: var(--color-light);
     display: flex;
     justify-content: space-between;
@@ -203,7 +220,7 @@ main .recent-activities a {
     border-radius: var(--border-radius-1);
 }
 
-.right .theme-toggler .icon {
+.dashboard-header .header-right .theme-toggler .icon {
     font-size: 1.2rem;
     width: 50%;
     height: 100%;
@@ -212,13 +229,13 @@ main .recent-activities a {
     justify-content: center;
 }
 
-.right .theme-toggler .icon.active {
+.dashboard-header .header-right .theme-toggler .icon.active {
     background: var(--color-primary);
     color: white;
     border-radius: var(--border-radius-1);
 }
 
-.right .top .profile {
+.dashboard-header .header-right .profile {
     display: flex;
     gap: 2rem;
     text-align: right;
@@ -254,37 +271,53 @@ main .recent-activities a {
 
 /*----------Media Queries Medium Displays----------*/
 @media screen and (max-width: 1200px) {
-  .container {
-    grid-template-columns: auto 23rem;
+  .dashboard-layout {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+    gap: 1.5rem;
+  }
+
+  .dashboard-header {
+    grid-column: 1 / -1;
+    width: 100%;
+    padding: 1rem 1.5rem;
+  }
+
+main {
+    grid-column: 1;
+    grid-row: 2;
+}
+
+  .right {
+    grid-column: 1;
+    grid-row: 3;
   }
 
   main .insights {
-    grid-template-columns: 1fr;
-    gap: 0;
+    grid-template-columns: repeat(2, 1fr);
   }
 
   main .recent-activities {
-    width: 94%;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    margin: 2rem 0 0 8.8rem;
+    position: relative;
+    margin-top: 2rem;
+    width: 100%;
   }
 
   main .recent-activities table {
-    width: 83vw;
+    width: 100%;
   }
 
-  main table thead tr th:last-child, 
+  main table thead tr th:last-child,
   main table thead tr th:first-child {
     display: none;
   }
 
-  main table tbody tr td:last-child, 
+  main table tbody tr td:last-child,
   main table tbody tr td:first-child {
     display: none;
   }
 }
+
 
 /*----------Media Queries Small Displays----------*/
 @media screen and (max-width: 768px) {
@@ -315,7 +348,7 @@ main .recent-activities a {
         margin: 0 auto 4rem;
     }
 
-    .right .top {
+    .dashboard-header {
         position: fixed;
         top: 0;
         left: 0;
@@ -325,21 +358,25 @@ main .recent-activities a {
         background: var(--color-white);
         width: 100%;
         margin: 0;
-        z-index: 2;
+        z-index: 100;
         box-shadow: 0 1rem 1rem var(--color-light);
     }
 
-    .right .top .theme-toggler {
+    .dashboard-header h1 {
+        margin-left: 4rem;
+    }
+
+    .dashboard-header .header-right .theme-toggler {
         width: 4.4rem;
         position: absolute;
         left: 66%;
     }
 
-    .right .profile .info {
+    .dashboard-header .header-right .profile .info {
         display: none;
     }
 
-    .right .top button {
+    .dashboard-header .header-right button {
         display: inline-block;
         background: transparent;
         cursor: pointer;
@@ -348,7 +385,7 @@ main .recent-activities a {
         left: 1rem;
     }
 
-    .right .top button .icon {
+    .dashboard-header .header-right button .icon {
         font-size: 2rem;
     }
 }

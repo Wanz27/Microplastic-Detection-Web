@@ -1,4 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { useState } from "react";
+
 import Navbar from './components/navbar';
 
 import Dashboard from './pages/Dashboard';
@@ -9,13 +11,15 @@ import MyTrash from './pages/MyTrash';
 import Setting from './pages/Setting';
 
 function App() {
+  const [sidebarOpen, setSidebarOpen] = useState(false);
+  
   return (
     <Router>
-      <div className="app-layout">
-        <Navbar />
+      <div className="web-layout">
+        <Navbar isOpen={sidebarOpen} onClose={() => setSidebarOpen(false)} />
         <main>
           <Routes>
-            <Route path="/" element={<Dashboard />} />
+            <Route path="/" element={<Dashboard onMenuClick={() => setSidebarOpen(true)} />} />
             <Route path="/detection" element={<Detection />} />
             <Route path="/samples" element={<Samples />} />
             <Route path="/analytics" element={<Analytics />} />
