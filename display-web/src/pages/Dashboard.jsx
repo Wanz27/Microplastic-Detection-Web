@@ -1,5 +1,3 @@
-import { useState, useEffect } from 'react';
-
 import AccountTreeIcon from '@mui/icons-material/AccountTree';
 import AnalyticsIcon from '@mui/icons-material/Analytics';
 import AssignmentIcon from '@mui/icons-material/Assignment';
@@ -8,20 +6,7 @@ import LightModeIcon from '@mui/icons-material/LightMode';
 import DarkModeIcon from '@mui/icons-material/DarkMode';
 import './Dashboard.css';
 
-export default function Dashboard({ onMenuClick }) {
-    const [darkMode, setDarkMode] = useState(() => {
-        return localStorage.getItem('theme') === 'dark';
-    });
-
-    useEffect(() => {
-        if (darkMode) {
-            document.body.classList.add('dark-theme-variables');
-            localStorage.setItem('theme', 'dark');
-        } else {
-            document.body.classList.remove('dark-theme-variables');
-            localStorage.setItem('theme', 'light');
-        }
-    }, [darkMode]);
+export default function Dashboard({ onMenuClick, darkMode, setDarkMode }) {
 
     return (
         <div className='dashboard-layout'>

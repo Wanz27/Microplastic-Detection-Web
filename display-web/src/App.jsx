@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import Navbar from './components/navbar';
 
@@ -12,6 +12,20 @@ import Setting from './pages/Setting';
 
 function App() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
+
+  const [darkMode, setDarkMode] = useState(() => {
+      return localStorage.getItem('theme') === 'dark';
+  });
+
+  useEffect(() => {
+      if (darkMode) {
+          document.body.classList.add('dark-theme-variables');
+          localStorage.setItem('theme', 'dark');
+      } else {
+          document.body.classList.remove('dark-theme-variables');
+          localStorage.setItem('theme', 'light');
+      }
+  }, [darkMode]);
   
   return (
     <Router>
@@ -19,7 +33,7 @@ function App() {
         <Navbar isOpen={sidebarOpen} onClose={() => setSidebarOpen(false)} />
         <main>
           <Routes>
-            <Route path="/" element={<Dashboard onMenuClick={() => setSidebarOpen(true)} />} />
+            <Route path="/" element={<Dashboard onMenuClick={() => setSidebarOpen(true)} darkMode={darkMode} setDarkMode={setDarkMode} />} />
             <Route path="/detection" element={<Detection />} />
             <Route path="/samples" element={<Samples />} />
             <Route path="/analytics" element={<Analytics />} />
