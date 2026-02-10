@@ -1,3 +1,5 @@
+import { useState, useEffect } from 'react';
+
 import AccountTreeIcon from '@mui/icons-material/AccountTree';
 import AnalyticsIcon from '@mui/icons-material/Analytics';
 import AssignmentIcon from '@mui/icons-material/Assignment';
@@ -7,6 +9,19 @@ import DarkModeIcon from '@mui/icons-material/DarkMode';
 import './Dashboard.css';
 
 export default function Dashboard({ onMenuClick }) {
+    const [darkMode, setDarkMode] = useState(() => {
+        return localStorage.getItem('theme') === 'dark';
+    });
+
+    useEffect(() => {
+        if (darkMode) {
+            document.body.classList.add('dark-theme-variables');
+            localStorage.setItem('theme', 'dark');
+        } else {
+            document.body.classList.remove('dark-theme-variables');
+            localStorage.setItem('theme', 'light');
+        }
+    }, [darkMode]);
 
     return (
         <div className='dashboard-layout'>
@@ -17,9 +32,9 @@ export default function Dashboard({ onMenuClick }) {
                         <MenuIcon className='icon'/>
                     </button>
 
-                    <div className="theme-toggler">
-                        <LightModeIcon className='icon active' />
-                        <DarkModeIcon className='icon' />
+                    <div className="theme-toggler" onClick={() => setDarkMode(prev => !prev)}>
+                        <LightModeIcon className={`icon ${!darkMode ? 'active' : ''}`} />
+                        <DarkModeIcon className={`icon ${darkMode ? 'active' : ''}`} />
                     </div>
                     <div className="profile">
                         <div className="info">
