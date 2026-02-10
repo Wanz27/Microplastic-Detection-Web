@@ -2,8 +2,9 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { Upload, Microscope, BarChart3 } from 'lucide-react';
 import './Detection.css';
+import Header from '../components/header';
 
-function Detection() {
+export default function Detection({onMenuClick, darkMode, setDarkMode}) {
   const [file, setFile] = useState(null);
   const [preview, setPreview] = useState(null);
   const [result, setResult] = useState(null);
@@ -38,10 +39,12 @@ function Detection() {
 
   return (
     <div className="container">
-      <header className="header">
-        <Microscope size={32} color="#3b82f6" />
-        <h1>MicroPlastic <span>Analyzer</span></h1>
-      </header>
+      <Header
+        title="Quick Detection"
+        onMenuClick={onMenuClick}
+        darkMode={darkMode}
+        setDarkMode={setDarkMode}
+      />
 
       <main className="main-content">
         {/* Kolom Kiri: Upload & Preview */}
@@ -102,5 +105,3 @@ function Detection() {
     </div>
   );
 }
-
-export default Detection;

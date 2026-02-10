@@ -1,5 +1,14 @@
-export default function Samples() {
+import Header from '../components/header';
+
+export default function Samples({onMenuClick, darkMode, setDarkMode}) {
     return (
-        <p>samples</p>
+        <div className='sample-layout'>
+                    <Header
+                        title="Samples"
+                        onMenuClick={onMenuClick}
+                        darkMode={darkMode}
+                        setDarkMode={setDarkMode}
+                    />
+        </div>
     )
 }

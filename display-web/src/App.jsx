@@ -34,11 +34,11 @@ function App() {
         <main>
           <Routes>
             <Route path="/" element={<Dashboard onMenuClick={() => setSidebarOpen(true)} darkMode={darkMode} setDarkMode={setDarkMode} />} />
-            <Route path="/detection" element={<Detection />} />
-            <Route path="/samples" element={<Samples />} />
-            <Route path="/analytics" element={<Analytics />} />
-            <Route path="/mytrash" element={<MyTrash />} />
-            <Route path="/setting" element={<Setting />} />
+            <Route path="/detection" element={<Detection onMenuClick={() => setSidebarOpen(true)} darkMode={darkMode} setDarkMode={setDarkMode} />} />
+            <Route path="/samples" element={<Samples onMenuClick={() => setSidebarOpen(true)} darkMode={darkMode} setDarkMode={setDarkMode} />} />
+            <Route path="/analytics" element={<Analytics onMenuClick={() => setSidebarOpen(true)} darkMode={darkMode} setDarkMode={setDarkMode} />} />
+            <Route path="/mytrash" element={<MyTrash onMenuClick={() => setSidebarOpen(true)} darkMode={darkMode} setDarkMode={setDarkMode} />} />
+            <Route path="/setting" element={<Setting onMenuClick={() => setSidebarOpen(true)} darkMode={darkMode} setDarkMode={setDarkMode} />} />
           </Routes>
         </main>
       </div>

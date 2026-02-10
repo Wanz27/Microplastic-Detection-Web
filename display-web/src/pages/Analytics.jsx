@@ -1,5 +1,14 @@
-export default function Analytics() {
+import Header from '../components/header';
+
+export default function Analytics({onMenuClick, darkMode, setDarkMode}) {
     return (
-        <p>analytics</p>
+        <div className='analytic-layout'>
+                    <Header
+                        title="Analytics"
+                        onMenuClick={onMenuClick}
+                        darkMode={darkMode}
+                        setDarkMode={setDarkMode}
+                    />
+        </div>
     )
 }

@@ -1,5 +1,14 @@
-export default function MyTrash() {
+import Header from '../components/header';
+
+export default function MyTrash({onMenuClick, darkMode, setDarkMode}) {
     return (
-        <p>My Trash</p>
+        <div className='trash-layout'>
+                    <Header
+                        title="My Trash"
+                        onMenuClick={onMenuClick}
+                        darkMode={darkMode}
+                        setDarkMode={setDarkMode}
+                    />
+        </div>
     )
 }
