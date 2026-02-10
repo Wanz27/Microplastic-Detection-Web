@@ -1,10 +1,10 @@
-/* Detection.css */
-.container {
-  background-color: #6fb5fb;
+.detection-layout {
+  background-color: var(--color-background);
   min-height: 100vh;
-  padding: 2rem;
+  color: var(--color-dark);
 }
 
+/* ===== Header ===== */
 .header {
   display: flex;
   align-items: center;
@@ -14,106 +14,130 @@
 
 .header h1 {
   margin: 0;
+  color: var(--color-dark);
 }
 
 .header span {
-  color: #3b82f6;
+  color: var(--color-primary);
 }
 
+/* ===== Main Layout ===== */
 .main-content {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 2rem;
 }
 
+/* ===== Card ===== */
 .card {
-  background: white;
-  padding: 1.5rem;
-  border-radius: 12px;
-  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+  background: var(--color-white);
+  padding: var(--card-padding);
+  border-radius: var(--card-border-radius);
+  box-shadow: var(--box-shadow);
 }
 
+/* ===== Drop Zone ===== */
 .drop-zone {
-  border: 2px dashed #002d63;
+  border: 2px dashed var(--color-primary-variant);
   padding: 2rem;
-  border-radius: 8px;
+  border-radius: var(--border-radius-2);
   cursor: pointer;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 10px;
-  color: #3b82f6;
+  color: var(--color-primary);
+  background: transparent;
+  transition: background 0.3s ease, border-color 0.3s ease;
 }
 
+.drop-zone:hover {
+  background: var(--color-light);
+}
+
+/* ===== Preview ===== */
 .preview-container {
   margin-top: 1.5rem;
 }
 
 .image-preview {
   width: 100%;
-  border-radius: 8px;
+  border-radius: var(--border-radius-2);
   max-height: 300px;
   object-fit: contain;
+  border: 1px solid var(--color-info-light);
 }
 
+/* ===== Button ===== */
 .btn-detect {
   width: 100%;
   margin-top: 1rem;
   padding: 0.75rem;
-  background-color: #3b82f6;
-  color: white;
+  background-color: var(--color-primary);
+  color: var(--color-white);
   border: none;
-  border-radius: 6px;
-  font-weight: bold;
+  border-radius: var(--border-radius-1);
+  font-weight: 600;
   cursor: pointer;
-  transition: background 0.3s;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.btn-detect:hover {
+  background-color: var(--color-primary-variant);
+  transform: translateY(-1px);
 }
 
 .btn-detect:disabled {
-  background-color: #93c5fd;
+  background-color: var(--color-info-light);
+  color: var(--color-info-dark);
   cursor: not-allowed;
 }
 
+/* ===== Empty State ===== */
 .empty-state {
   height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  color: #002d63;
+  color: var(--color-dark-variant);
 }
 
+/* ===== Badge ===== */
 .stat-badge {
-  background-color: #002d63;
+  background-color: var(--color-primary-variant);
   padding: 10px 15px;
-  border-radius: 8px;
+  border-radius: var(--border-radius-2);
   display: flex;
   justify-content: space-between;
   margin-bottom: 10px;
-  border: 1px solid #dbeafe;
+  border: 1px solid var(--color-info-light);
 }
 
 .badge-label {
   font-weight: 600;
   text-transform: capitalize;
-  color: #ffffff;
+  color: var(--color-white);
 }
 
 .badge-val {
-  color: #6fb5fb;
+  color: var(--color-success);
   font-weight: bold;
 }
 
+/* ===== Result Image ===== */
 .image-result {
   width: 100%;
-  border-radius: 8px;
-  border: 2px solid #3b82f6;
+  border-radius: var(--border-radius-2);
+  border: 2px solid var(--color-primary);
 }
 
+/* ===== Utility ===== */
 .title-blue {
-  color: #6fb5fb;
+  color: var(--color-primary);
 }
 
+/* ===== Responsive ===== */
 @media (max-width: 768px) {
   .main-content {
     grid-template-columns: 1fr;

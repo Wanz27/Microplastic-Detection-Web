@@ -38,7 +38,7 @@ export default function Detection({onMenuClick, darkMode, setDarkMode}) {
   };
 
   return (
-    <div className="container">
+    <div className="detection-layout">
       <Header
         title="Quick Detection"
         onMenuClick={onMenuClick}
