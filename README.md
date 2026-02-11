@@ -36,5 +36,5 @@ npm i
 npm run dev
 ```
 
-versi 1.7
-Add some improvement on web + phone layout
+versi 1.8
+Add components on samples page
