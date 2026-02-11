@@ -1,7 +1,14 @@
+import React, { useState } from 'react';
 import Header from '../components/header';
 import './Samples.css';
 
 export default function Samples({ onMenuClick, darkMode, setDarkMode }) {
+    const [openFilter, setOpenFilter] = useState(null);
+
+    const toggleFilter = (filterName) => {
+        setOpenFilter(openFilter === filterName ? null : filterName);
+    };
+
     return (
         <div className='smp-layout-container'>
             <Header
@@ -14,22 +21,40 @@ export default function Samples({ onMenuClick, darkMode, setDarkMode }) {
             <main className="smp-main-wrapper">
                 <aside className="smp-sidebar-filter">
                     <div className="smp-filter-group">
-                        <label className="smp-label">Name</label>
-                        <select className="smp-select">
-                            <option>All Names</option>
-                        </select>
+                        <div className="smp-label" onClick={() => toggleFilter('name')}>
+                            <span>Name</span>
+                        </div>
+                        {openFilter === 'name' && (
+                            <select className="smp-select" defaultValue="">
+                                <option value="" disabled>Pilih nama sampel</option>
+                                <option value="sungai_a">Sampel Sungai A</option>
+                                <option value="sungai_b">Sampel Sungai B</option>
+                            </select>
+                        )}
                     </div>
                     <div className="smp-filter-group">
-                        <label className="smp-label">Types</label>
-                        <select className="smp-select">
-                            <option>All Types</option>
-                        </select>
+                        <div className="smp-label" onClick={() => toggleFilter('types')}>
+                            <span>Types</span>
+                        </div>
+                        {openFilter === 'types' && (
+                            <select className="smp-select" defaultValue="">
+                                <option value="" disabled>Pilih tipe sampel</option>
+                                <option value="sungai_a">Publik</option>
+                                <option value="sungai_b">Privat</option>
+                            </select>
+                        )}
                     </div>
                     <div className="smp-filter-group">
-                        <label className="smp-label">Status</label>
-                        <select className="smp-select">
-                            <option>All Status</option>
-                        </select>
+                        <div className="smp-label" onClick={() => toggleFilter('status')}>
+                            <span>Status</span>
+                        </div>
+                        {openFilter === 'status' && (
+                            <select className="smp-select" defaultValue="">
+                                <option value="" disabled>Pilih status</option>
+                                <option value="sungai_a">Sukses</option>
+                                <option value="sungai_b">Gagal</option>
+                            </select>
+                        )}
                     </div>
                 </aside>
 

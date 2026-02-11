@@ -54,12 +54,11 @@
     display: flex;
     flex-direction: column;
     height: 20rem;
-    gap: 16px;
+    gap: 25px;
     background: var(--color-white);
     border-radius: var(--card-border-radius);
     padding: var(--card-padding);
     text-align: center;
-    box-shadow: var(--box-shadow);
     transition: all 300ms ease;
 }
 
@@ -72,14 +71,36 @@
 .smp-label {
     font-size: 14px;
     font-weight: 600;
+    cursor: pointer;
+    text-align: center;
+    padding: 10px 0;
+    transition: all 0.3s ease;
+    border-bottom: 2px solid #e2e8f0;
+}
+
+.smp-label span {
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: #1e293b;
+}
+
+.smp-label:hover {
+    border-bottom-color: #3b82f6; /* Warna berubah saat hover */
 }
 
 .smp-select {
-    padding: 8px;
-    border-radius: 6px;
-    border: 1px solid #ccc;
-    background: white;
-    color: black;
+    margin-top: 8px;
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #cbd5e1;
+    background-color: white;
+    animation: slideDown 0.2s ease-out;
+}
+
+@keyframes slideDown {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 /* Table Section (Kanan) */
