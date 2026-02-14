@@ -36,7 +36,7 @@ npm i
 npm run dev
 ```
 
-versi 1.8
-Add components on samples page
+versi 1.9
+Modify layout page on samples page
 
 https://docs.google.com/document/d/1-VlfYWlJW-aIlARt5-2w6XxJcnf8oksoaLBnCODA5Ho/edit?usp=sharing
