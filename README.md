@@ -36,7 +36,7 @@ npm i
 npm run dev
 ```
 
-versi 1.9.2
-Modify use cases
+versi 1.9.3
+Finalize use cases
 
 https://docs.google.com/document/d/1-VlfYWlJW-aIlARt5-2w6XxJcnf8oksoaLBnCODA5Ho/edit?usp=sharing
