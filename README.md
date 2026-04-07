@@ -40,3 +40,5 @@ versi 1.9.7
 Finalize use cases
 
 https://docs.google.com/document/d/1-VlfYWlJW-aIlARt5-2w6XxJcnf8oksoaLBnCODA5Ho/edit?usp=sharing
+
+https://www.figma.com/design/RVwxf16Z0OO6DhoQ9rGoJy/Design?node-id=11-93&t=PT4SXNDEoNdabohw-1
